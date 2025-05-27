@@ -1,0 +1,157 @@
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pydeconv"]
+
+[project]
+name = "owkin-pydeconv"
+dynamic = ["version"]
+description = "Python implementation of deconvolution algorithms"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Yann Rodriguez", email = "yann.rodriguez@owkin.com"}]
+keywords = []
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "anndata>=0.11.2",
+    "cvxopt>=1.3.2",
+    "matplotlib>=3.10.0",
+    "mkdocs-dracula-theme>=1.0.7",
+    "quadprog>=0.1.13",
+    "scikit-learn>=1.6.1",
+    "statsmodels>=0.14.4",
+    "tqdm>=4.67.1",
+    "requests>=2.32.3",
+    "loguru>=0.7.3",
+]
+
+[project.urls]
+Source = "https://github.com/owkin/PyDeconv_internal"
+Issues = "https://github.com/owkin/PyDeconv_internal/issues"
+
+[project.optional-dependencies]
+torch = [
+    "torch>=2.6.0",
+]
+scvi = [
+    "scvi-tools[autotune]>=1.3.1.post1",
+]
+
+[dependency-groups]
+dev = [
+    "codespell>=2.2.6",
+    "ipykernel>=6.29.3",
+    "jupyter>=1.0.0",
+    "mypy>=1.8.0",
+    "notebook>=7.1.1",
+    "pre-commit>=3.5.0",
+    "pre-commit-hooks>=4.5.0",
+    "ruff>=0.3.1",
+    "yamllint>=1.35.1",
+]
+docs = [
+    "mkdocs>=1.5.3",
+    "mkdocs-include-markdown-plugin>=6.0.4",
+    "mkdocs-git-revision-date-localized-plugin>=1.2.4",
+    "mkdocs-material>=9.5.13",
+    "mkdocstrings-python>=1.8.0",
+]
+tests = [
+    "pytest>=8.0.2",
+    "pytest-cov>=4.1.0",
+    "pyreadr>=0.5.2",
+]
+benchmark = [
+    "scikit-misc>=0.5.1",
+]
+
+[tool.hatch.version]
+path = "src/pydeconv/__init__.py"
+
+[tool.uv]
+default-groups = ["dev", "docs", "tests"]
+
+[tool.mypy]
+python_version = "3.10"
+check_untyped_defs = true
+ignore_missing_imports = true
+warn_return_any = true
+plugins = []
+
+[tool.pytest.ini_options]
+log_cli_level = "INFO"
+
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+lint.ignore = [
+    "B008", # do not perform function calls in argument defaults
+    "C901", # too complex
+]
+lint.select = [
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # pyflakes
+    "I", # isort
+    "C", # flake8-comprehensions
+    "B", # flake8-bugbear
+]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.ruff.lint.isort]
+known-first-party = ["PyDeconv"]
+lines-after-imports = 2
+
+[tool.ruff.lint.pyupgrade]
+# Preserve types, even if a file imports `from __future__ import annotations`.
+keep-runtime-typing = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+]
+
+[tool.codespell]
+skip = "*.svelte,*.ts,*.js,*.html,*.yaml,*.yml,*.json"

@@ -1,0 +1,94 @@
+site_name: PyDeconv
+site_url: https://github.com/owkin/PyDeconv
+site_author: Yann Rodriguez
+site_description: Python implementation of deconvolution algorithms
+
+repo_name: owkin/PyDeconv
+repo_url: https://github.com/owkin/PyDeconv
+
+copyright: Copyright (c) 2023-present Yann Rodriguez <yann.rodriguez@owkin.com>
+
+theme:
+  name: material
+  logo: images/logo.png
+  palette:
+    # Palette for light mode
+    - scheme: default
+      primary: "custom"
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: "custom"
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - content.code.copy
+    - navigation.tracking
+    - content.code.copy
+    - content.action.edit
+    - content.tooltips
+    - content.code.annotate
+    - navigation.tabs
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+plugins:
+  - search:
+  - git-revision-date-localized:
+      type: timeago
+      enable_creation_date: true
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: numpy
+  - include-markdown:
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/owkin/PyDeconv
+
+nav:
+  - PyDeconv: index.md
+  - Userguide:
+    - Quickstart: quickstart.md
+    - Installation: installation.md
+  - Model registry:
+    - Signatures: model_registry/signatures.md
+    - Models: model_registry/models.md
+  - API Reference:
+    - Overview: api/index.md
+    - Model:
+      - Model: api/model/model.md
+      - Solver: api/model/solver.md
+      - nn:
+        - Scaden: api/model/nn/scaden.md
+        - TAPE: api/model/nn/tape.md
+        - Registry module : api/model/nn/registry.md
+    - Signature Matrix:
+      - Signature matrix: api/signature_matrix/signature_matrix.md
+      - Registry signatures: api/signature_matrix/registry.md
+  - Contributing: contributing.md
+  - Changelog: changelog.md
+
+
+extra_css:
+  - style.css
