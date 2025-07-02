@@ -117,8 +117,8 @@ python benchmark/run_benchmark.py
 ```
 
 > [!NOTE]
-> The repository does not allow to provide capabilities to train *MixUpVI* and other deep learning methods, or create signature matrices.
-> We provide weights from trained models, and pre-computed signature matrices used in the publication.
+> The repository only provides inference capabilities. It does not provide capabilities to train *MixUpVI* and other deep learning methods, or create signature matrices.
+> Therefore, we provide the weights from the trained models presented in the publication, and pre-computed signature matrices.
 > To use these models on other datasets, one must provide their own weights and/or pre-computed signature matrices.
 
 ## Results 1st granularity
