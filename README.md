@@ -136,15 +136,12 @@ python benchmark/run_benchmark.py
 # Cite
 If you found our work useful in your research, please consider citing it at:
 ```
-@UNPUBLISHED{Grouard2025-ck,
-  title     = "Joint probabilistic modeling of pseudobulk and single-cell
-               transcriptomics enables accurate estimation of cell type
-               composition",
-  author    = "Grouard, Simon and Ouardini, Khalil and Rodriguez, Yann and
-               Vert, Jean-Philippe and Espin-Perez, Almudena",
-  journal   = "bioRxiv",
-  month     =  jun,
-  year      =  2025,
-  copyright = "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+@inproceedings{
+grouard2025joint,
+title={Joint Probabilistic Modeling of Pseudobulk and Single-Cell Transcriptomics Enables Accurate Estimation of Cell Composition},
+author={Simon Grouard and Khalil Ouardini and Yann Rodriguez and Jean-Philippe Vert and Almudena Espin-Perez},
+booktitle={ICML 2025 Generative AI and Biology (GenBio) Workshop},
+year={2025},
+url={https://openreview.net/forum?id=JhDJ0MGo2z}
 }
 ```
