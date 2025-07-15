@@ -11,9 +11,14 @@
 <p align="center"><em>Python implementation of bulk RNAseq deconvolution algorithms</em></p>
 <div align="center">
  <a href="https://pypi.owkin.com/#/package/PyDeconv" target="_blank">
+  <img src="https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-blue?logo=python" />
  </a>
- <img src="https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-blue?logo=python" />
- <a href="https://docs.astral.sh/uv/" target="_blank">
+
+ <a href="https://pypi.org/project/pydeconv/" target="_blank">
+  <img src="https://badge.fury.io/py/pydeconv.svg" alt="PyPI version">
+ </a>
+
+  <a href="https://docs.astral.sh/uv/" target="_blank">
   <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/refs/heads/main/assets/badge/v0.json" />
  </a>
 </div>
@@ -26,13 +31,17 @@
 pip install pydeconv
 ```
 
+> [!NOTE]
+> If you want to use deep learning models, you need to use pip install "pydeconv[torch]" to install the required dependencies.
+> If you want to use mixupVI, you need to use pip install "pydeconv[scvi]" to install the required dependencies.
+
 # dev
 
 ```shell
 uv sync --all-groups --all-extras
 ```
 
-# How to use
+# How to use: overview
 
  ```python
 from pydeconv import SignatureMatrix
@@ -43,12 +52,12 @@ signature_matrix = SignatureMatrix.load("path/to/signature_matrix.csv") # index:
 solver = NNLS(signature_matrix)
 
 adata = AnnData("path/to/adata.h5ad") # index: sample_id, columns: gene_names
-adata.layers["raw_counts"] = ... # apply your preprocessing step (check rnaxplorer)
+adata.layers["raw_counts"] = ... # apply your preprocessing step or not
 
 cell_prop = solver.transform(adata, layer="raw_counts", ratio=True)
 ```
 
-# How to use (full)
+# How to use: detailed
 
 ## 1. Load an already registered signature matrix
 
