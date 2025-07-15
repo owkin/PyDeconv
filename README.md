@@ -22,8 +22,6 @@
 
 # package
 
-👷🚧 soon 🚧👷
-
 ```shell
 pip install pydeconv
 ```
@@ -50,10 +48,6 @@ adata.layers["raw_counts"] = ... # apply your preprocessing step (check rnaxplor
 cell_prop = solver.transform(adata, layer="raw_counts", ratio=True)
 ```
 
-More details in the [next section](#how_to).
-
-<a name="how_to"></a>
-
 # How to use (full)
 
 ## 1. Load an already registered signature matrix
@@ -63,7 +57,8 @@ from pydeconv.signature_matrix.registry import sig_matrix_laughney_lung_cancer
 signature_matrix = sig_matrix_laughney_lung_cancer()
 ```
 
-Checkout [here](https://github.com/owkin/PyDeconv/blob/main/src/pydeconv/signature_matrix/registry.py) for more description of other registered signature matrix.
+> [!NOTE]
+> Checkout [here](https://github.com/owkin/PyDeconv/blob/main/src/pydeconv/signature_matrix/registry.py) for more description of other registered signature matrix.
 
 ## 2. Load a custom signature matrix
 
@@ -134,7 +129,9 @@ python benchmark/run_benchmark.py
 > It will be automatically downloaded when running the benchmark.
 
 # Cite
+
 If you found our work useful in your research, please consider citing it at:
+
 ```
 @inproceedings{
 grouard2025joint,
