@@ -6,7 +6,7 @@ requires = ["hatchling"]
 packages = ["src/pydeconv"]
 
 [project]
-name = "owkin-pydeconv"
+name = "pydeconv"
 dynamic = ["version"]
 description = "Python implementation of deconvolution algorithms"
 readme = "README.md"
@@ -42,8 +42,9 @@ dependencies = [
 ]
 
 [project.urls]
-Source = "https://github.com/owkin/PyDeconv_internal"
-Issues = "https://github.com/owkin/PyDeconv_internal/issues"
+Source = "https://github.com/owkin/PyDeconv"
+Documentation = "https://owkin.github.io/PyDeconv/"
+Issues = "https://github.com/owkin/PyDeconv/issues"
 
 [project.optional-dependencies]
 torch = [

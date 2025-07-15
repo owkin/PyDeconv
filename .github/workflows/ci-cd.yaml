@@ -12,9 +12,6 @@ on:
       - .github/workflows/ci-cd.yaml
       - src/pydeconv/**
       - tests/**
-  release:
-    types:
-      - published
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
