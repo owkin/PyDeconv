@@ -28,7 +28,7 @@
 # package
 
 ```shell
-pip install pydeconv
+pip install "pydeconv[scvi]"
 ```
 
 > [!NOTE]
