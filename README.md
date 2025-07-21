@@ -28,17 +28,13 @@
 # package
 
 ```shell
-pip install "pydeconv[scvi]"
+pip install "pydeconv"
 ```
-
-> [!NOTE]
-> If you want to use deep learning models, you need to use pip install "pydeconv[torch]" to install the required dependencies.
-> If you want to use mixupVI, you need to use pip install "pydeconv[scvi]" to install the required dependencies.
 
 # dev
 
 ```shell
-uv sync --all-groups --all-extras
+uv sync --all-groups
 ```
 
 # How to use: overview
